@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Recipes Tools</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title">Titre</string>
+    <string name="link_register_text">S\'enregistrer</string>
+    <string name="name_text">Nom</string>
+    <string name="login_text">Se connecter</string>
+    <string name="register_text">S\'enregister</string>
+    <string name="all">Tous</string>
+    <string name="no_internet">pas d\'internet</string>
+    <string name="network_error">Erreur connexion internet</string>
+    <string name="search_error">Erreur recherche</string>
+    <string name="invalid_username_and_password">Le mail ou le mot de passe n\'est pas valide</string>
+    <string-array name="unities">
+            <item>g</item>
+            <item>Kg</item>
+            <item>mL</item>
+            <item>cL</item>
+            <item>L</item>
+            <item>cc</item>
+            <item>cs</item>
+            <item>pcs</item>
+    </string-array>
+
+</resources>
