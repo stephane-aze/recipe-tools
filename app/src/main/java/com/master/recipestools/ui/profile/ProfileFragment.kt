@@ -8,13 +8,14 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.master.recipestools.databinding.FragmentIngredientCreateBinding
+import com.master.recipestools.databinding.FragmentProfileBinding
+import com.master.recipestools.session.SessionManager
 
 
-class IngredientCreateFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: IngredientCreateViewModel
-    private var _binding: FragmentIngredientCreateBinding? = null
+    private lateinit var notificationsViewModel: ProfileViewModel
+    private var _binding: FragmentProfileBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -26,14 +27,18 @@ class IngredientCreateFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         notificationsViewModel =
-            ViewModelProvider(this).get(IngredientCreateViewModel::class.java)
-
-        _binding = FragmentIngredientCreateBinding.inflate(inflater, container, false)
+            ViewModelProvider(this).get(ProfileViewModel::class.java)
+        notificationsViewModel.sessionManager = SessionManager(requireContext())
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        //val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
-            //textView.text = it
+        val textView: TextView = binding.textEmail
+        notificationsViewModel.textEmail.observe(viewLifecycleOwner, Observer {
+            textView.text = it
+        })
+        val textView2: TextView = binding.textUsername
+        notificationsViewModel.textName.observe(viewLifecycleOwner, Observer {
+            textView2.text = it
         })
         return root
     }

@@ -1,5 +1,7 @@
 package com.master.recipestools.iterator
 
+import com.master.recipestools.data.model.Category
+
 interface Iterator<T> {
     fun hasNext(): Boolean
     fun next()
@@ -30,6 +32,21 @@ class ListIterator(private val list: List<String>) : Iterator<String> {
     }
 
     override fun current(): String {
+        return list[index]
+    }
+
+    override fun next() {
+        index++
+    }
+}
+class ListIteratorCategory(private val list: List<Category>) : Iterator<Category> {
+    var index = 0
+
+    override fun hasNext(): Boolean {
+        return index < list.size
+    }
+
+    override fun current(): Category {
         return list[index]
     }
 

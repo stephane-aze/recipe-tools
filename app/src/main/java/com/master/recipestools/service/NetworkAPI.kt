@@ -13,18 +13,21 @@ interface NetworkAPI {
     @POST("api/auth/login")
     fun toLogin(@Body authDTO: SignInDTO
     ): Call<AuthDTO>
+    @POST("api/auth/register")
+    fun createUser(@Body authDTO: AuthDTO
+    ): Call<AuthDTO>
     @GET("api/recipe/")
     fun getRecipes(@Header("auth-token") token: String) : Call<List<RecipeDTO>>
+    @GET("api/foods/")
+    fun getFoods(@Header("auth-token") token: String) : Call<List<FoodDTO>>
     @POST("api/recipe/")
-    fun postRecipe(@Header("auth-token") token: String,@Body recipeDTO: RecipeDTO) : Call<RecipeResponseDTO>
+    fun postRecipe(@Header("auth-token") token: String,@Body recipeDTO: RecipeDTO) : Call<String>
     @GET("api/category")
-    fun getCategories(@Header("auth-token") token: String/**/) : Call<List<CategoryDTO>>
+    fun getCategories() : Call<List<CategoryDTO>>
     @GET("api/recipe/{id}")
     fun getRecipeById(@Header("auth-token") token: String, @Path("id") id: Long): Call<RecipeDTO>
-    @GET("api/ingredient/")
-    fun getIngredients(@Header("auth-token") token: String/**/) : Call<List<IngredientDTO>>
-    @POST("api/ingredient")
-    fun postIngredient(@Header("auth-token") token: String,@Body ingredientDTO: IngredientDTO) : Call<List<IngredientDTO>>
+    @POST("api/food")
+    fun createFood(@Header("auth-token") token: String,@Body foodDto: FoodDTO) : Call<String>
 
 
 }

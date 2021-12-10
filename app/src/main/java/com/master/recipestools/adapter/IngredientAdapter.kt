@@ -10,7 +10,6 @@ import com.master.recipestools.extension.inflate
 
 class IngredientAdapter: RecyclerView.Adapter<IngredientAdapterViewHolder>() {
     var ingredientListener: ((Ingredient) -> Unit)? = null
-    var context: Context?=null
     var ingredients = mutableListOf<Ingredient>()
         set(value) {
             field = value
@@ -24,14 +23,14 @@ class IngredientAdapter: RecyclerView.Adapter<IngredientAdapterViewHolder>() {
 
     override fun onBindViewHolder(holder: IngredientAdapterViewHolder, position: Int) {
         val ingredient = ingredients[position]
-        holder.bind(ingredient,context)
+        holder.bind(ingredient)
         holder.itemView.setOnClickListener { ingredientListener?.invoke(ingredient) }
     }
 
     override fun getItemCount()= ingredients.size
 }
 class IngredientAdapterViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-    fun bind(ingredient: Ingredient, context: Context?) {
+    fun bind(ingredient: Ingredient) {
 
     }
 

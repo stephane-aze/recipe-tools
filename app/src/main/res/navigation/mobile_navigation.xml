@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_create_ingredient"
-        android:name="com.master.recipestools.ui.notifications.NotificationsFragment"
+        android:name="com.master.recipestools.ui.profile.Fra"
         android:label="Ingredient"
-        tools:layout="@layout/fragment_ingredient_create" />
+        tools:layout="@layout/fragment_profile" />
 </navigation>

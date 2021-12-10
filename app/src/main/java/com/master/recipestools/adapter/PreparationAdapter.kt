@@ -12,7 +12,6 @@ import com.master.recipestools.extension.inflate
 
 class PreparationAdapter: RecyclerView.Adapter<PreparationViewHolder>() {
     var preparationListener: ((Instruction) -> Unit)? = null
-    var context: Context?=null
     var preparations = mutableListOf<Instruction>()
         set(value) {
             field = value
@@ -26,14 +25,14 @@ class PreparationAdapter: RecyclerView.Adapter<PreparationViewHolder>() {
 
     override fun onBindViewHolder(holder: PreparationViewHolder, position: Int) {
         val preparation = preparations[position]
-        holder.bind(preparation,context/*,counterFab*/)
+        holder.bind(preparation)
         holder.itemView.setOnClickListener { preparationListener?.invoke(preparation) }
     }
 
     override fun getItemCount()= preparations.size
 }
 class PreparationViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-    fun bind(preparation: Instruction,context: Context?) {
+    fun bind(preparation: Instruction) {
 
     }
 

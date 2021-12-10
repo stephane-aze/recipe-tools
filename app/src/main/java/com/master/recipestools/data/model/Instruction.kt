@@ -1,3 +1,3 @@
 package com.master.recipestools.data.model
 
-class Instruction (val step:Int, description: String, val imagePath: String)
+class Instruction (val step:Int, val description: String, val imagePath: String)

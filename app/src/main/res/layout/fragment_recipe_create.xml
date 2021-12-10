@@ -8,6 +8,16 @@
     android:layout_margin="10dp"
  >
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="@color/purple_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_send" />
+
     <ProgressBar
         android:id="@+id/progressBar4"
         style="?android:attr/progressBarStyle"
@@ -85,11 +95,11 @@
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/button2"
+                app:layout_constraintEnd_toStartOf="@+id/btn_add_ingredient"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btn_add_ingredient"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -108,11 +118,12 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ingredients_recyclerview"
             android:layout_width="match_parent"
-            tools:listitem="@layout/item_ingredient"
-            app:spanCount="2"
+            android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            android:layout_height="wrap_content" />
+            app:spanCount="2"
+            tools:listitem="@layout/item_ingredient" />
     </LinearLayout>
 
     <TextView
@@ -142,10 +153,11 @@
             android:text="Créer étape de préparation" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/instructions_recyclerview"
             android:layout_width="match_parent"
-            tools:listitem="@layout/item_preparation"
+            android:layout_height="match_parent"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:layout_height="match_parent" />
+            tools:listitem="@layout/item_preparation" />
 
     </LinearLayout>
 
